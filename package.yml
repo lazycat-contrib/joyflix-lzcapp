@@ -1,0 +1,14 @@
+package: community.lazycat.app.joyflix
+version: 0.1.0
+name: JoyFlix
+description: "✨JoyFlix观影平台是一款基于 MoonTV二次开发完全重构的项目 （NEXT.JS） 的影视播放平台，将MoonTV的底层结构代码进行完全的重构及其优化对UI及其交互逻辑进行完全重构"
+min_os_version: "1.5.0"
+homepage: https://github.com/jeffernn/joyflix
+author: jeffernn
+locales:
+  zh:
+    description: "✨JoyFlix观影平台是一款基于 MoonTV二次开发完全重构的项目 （NEXT.JS） 的影视播放平台，将MoonTV的底层结构代码进行完全的重构及其优化对UI及其交互逻辑进行完全重构"
+    name: JoyFlix
+  en:
+    description: "MoonTV based on Platform"
+    name: JoyFlix

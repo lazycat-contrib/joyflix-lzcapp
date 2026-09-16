@@ -1,0 +1,24 @@
+application:
+  subdomain: joyflix
+  background_task: true
+  upstreams:
+    - location: /
+      backend: http://joyflix-core:3000/
+
+services:
+  joyflix-core:
+    # upstream: ghcr.io/jeffernn/joyflix@sha256:453fd835de93538a880dce307680da0f20d805c575c6ddfe09557f7018a2a877
+    image: ghcr.io/jeffernn/joyflix@sha256:453fd835de93538a880dce307680da0f20d805c575c6ddfe09557f7018a2a877
+    environment:
+      - USERNAME={{ .U.admin_username }}
+      - PASSWORD={{.U.admin_password}}
+      - NEXT_PUBLIC_STORAGE_TYPE=redis
+      - REDIS_URL=redis://joyflix-redis:6379
+    depends_on:
+      - joyflix-redis
+
+  joyflix-redis:
+    # upstream: library/redis:7-alpine
+    image: redis:7-alpine
+    binds:
+      - /lzcapp/var/redis:/data
